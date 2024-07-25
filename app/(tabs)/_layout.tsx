@@ -1,37 +1,49 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { View, Text } from 'react-native'
+import React from 'react'
+import { Tabs, Redirect } from 'expo-router'
+import { Foundation } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome6 } from '@expo/vector-icons';
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabsLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
-  );
+   <>
+      <Tabs>
+         <Tabs.Screen name='home' options={{
+          title: "home",
+          headerShown: false,
+          tabBarIcon: ({color, focused, size}) => 
+               <Foundation name="home"  size={24} color="#4E4B66" />
+          
+         
+   
+         }} /> 
+
+        <Tabs.Screen name='Explore' options={{
+          title: "Explore",
+          headerShown: false,
+          tabBarIcon: ({color, focused, size}) => 
+               <FontAwesome6 name="compass" size={24} color="#4E4B66" />
+   
+         }} />
+
+        <Tabs.Screen name='Bookmark' options={{
+          title: "Bookmark",
+          headerShown: false,
+          tabBarIcon: ({color, focused, size}) => 
+               <MaterialIcons name="bookmark-border" size={24} color="#4E4B66" />
+   
+         }} />
+
+         <Tabs.Screen name='profile' options={{
+          title: "profile",
+          headerShown: false,
+          tabBarIcon: ({color, focused, size}) => 
+               <FontAwesome5 name="user-circle" size={24} color="#4E4B66" />
+   
+         }} />
+        </Tabs>
+   </>
+  )
 }
