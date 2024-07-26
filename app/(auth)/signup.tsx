@@ -32,7 +32,7 @@ const Signup : React.FC = () => {
       setuserTrue(true)
    } else {
       setuserTrue(false)
-      router.push('/(tabs)/profile')
+      router.push('/(tabs)/home')
    }
   }
 
