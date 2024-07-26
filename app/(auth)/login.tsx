@@ -32,21 +32,21 @@ const Signup : React.FC = () => {
       setuserTrue(true)
    } else {
       setuserTrue(false)
-      router.push('/(tabs)/profile')
+      router.push('/(tabs)/home')
    }
   }
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.hello} >Hello</Text>
-      <Text style={[styles.hello, {color: "black" ,margin:0}]} >Again!</Text>
+      <Text style={[styles.hello, { color: "#1877F2" ,margin:0}]} >Again!</Text>
       <Text style={{color:"#4E4B66" , width: 150, margin: 5}}>Welcome back you’ve
           been missed</Text>
-      <View style={{ gap: 5, marginTop: 70 }}>
+      <View style={{ gap: 2, marginTop: 40 }}>
         <Text style={{ color: "#4E4B66" }}>Username <Text style={{ color: "#C30052" }}>*</Text></Text>
         <View style={styles.inputContainer}>
           <TextInput
-            style={[styles.input, username !== 'nicola' && username.length > 0 ? { borderColor: 'red' } : {}]}
+            style={[styles.input, username !== 'nicola' && username.length > 0 ? { borderColor: 'red',backgroundColor:"#FFF3F8" } : {}]}
             placeholder='username...'
             value={username}
             onChangeText={handleUsernameChange}
@@ -71,9 +71,9 @@ const Signup : React.FC = () => {
           />
           <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
             {showPassword ? (
-              <Feather name="eye" size={24} color="#4E4B66" />
+              <Feather name="eye" size={22}  color="#4E4B66" />
             ) : (
-              <FontAwesome5 name="eye-slash" size={24} color="#4E4B66" />
+              <FontAwesome5 name="eye-slash" size={22} color="#4E4B66" />
             )}
           </TouchableOpacity>
         </View>
@@ -112,7 +112,7 @@ export default Signup;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 40,
+    paddingTop: 10,
     padding: 15,
     fontSize: 20,
     color: "#4E4B66",
@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
   hello: {
     fontWeight: '600',
     fontSize: 35,
-    color: "#1877F2",
-    marginVertical: 10
+   
+    marginVertical: 5
   },
 
   inputContainer: {
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    height: 44,
+    height: 40,
     borderRadius: 6,
     fontSize: 14,
     padding: 10,
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   clearButton: {
     position: 'absolute',
     right: 10,
-    top: 12
+    top: 7
   },
   passwordContainer: {
     position: 'relative'
@@ -149,7 +149,8 @@ const styles = StyleSheet.create({
   eyeIcon: {
     position: 'absolute',
     right: 10,
-    top: 12
+    
+    top: 7
   },
   checkbox: {
     alignSelf: 'center'

@@ -63,6 +63,7 @@ const Profile = () => {
           onChangeText={setPhoneNumber}
         />
       </View>
+      <View style={{height:3, borderColor:'black', backgroundColor:"black", width:"300"}} / >
       <TouchableOpacity style={styles.nextButton}>
         <Text style={styles.nextButtonText}>Next</Text>
       </TouchableOpacity>
