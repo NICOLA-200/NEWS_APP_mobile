@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   inputContainer: {
-    marginBottom: 20,
+    marginBottom: 10,
     width:300,
     display: "flex"
 
@@ -124,8 +124,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#4E4B66',
     borderRadius: 8,
-    padding: 10,
-    marginBottom: 15,
+    padding:8,
+    marginBottom: 7,
     width: 300,
     fontSize: 16,
   },
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   nextButton: {
     backgroundColor: '#1877F2',
     borderRadius: 8,
-    padding: 15,
+    padding: 12,
     alignItems: 'center',
     position:"absolute",
     bottom:15,

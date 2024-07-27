@@ -1,7 +1,7 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Text, Image , SafeAreaView , StyleSheet } from 'react-native';
-import { Stack, Link } from 'expo-router';
+import { Text, Image , SafeAreaView ,TouchableOpacity, StyleSheet } from 'react-native';
+import { Stack, Link, router } from 'expo-router';
 
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
@@ -30,9 +30,11 @@ export default function RootLayout() {
 
   return (
        <SafeAreaView  style={styles.container}>
-      <Link href="/signup">
-            <Image style={{marginTop:180}} source={require('../assets/d-images/Vector.png')} />
-      </Link>
+      
+      <TouchableOpacity onPress={() => router.push("/signup")} style={{marginTop:200}}>
+     <Image   source={require('../assets/d-images/Vector.png')} />       
+     </TouchableOpacity>
+    
      
       </SafeAreaView>
   );
@@ -44,6 +46,7 @@ const styles = StyleSheet.create(
   {
     container : {
       display: "flex",
+      
       flex:1,
       alignItems:"center",
       backgroundColor:"white"
